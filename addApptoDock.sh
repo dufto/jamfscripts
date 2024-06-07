@@ -2,7 +2,7 @@
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 
-# version 1.0
+# version 1.1
 # Written by: Tommy Dufault
 #
 # Permission is granted to use this code in any way you want.
@@ -21,6 +21,33 @@
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
+####################################################################################################
+#
+# Instructions
+#
+####################################################################################################
+
+# Step 1 
+
+# Copy Script in Jamf Scripts
+
+# Parameter 4: Organisation Name
+
+# Parameter 5: Logs Path (keep empty or define here)
+
+# Parameter 6: Application Path
+
+
+
+# Step 2
+
+# Create New Policy
+
+# Add Previously Added Script
+
+# Fill Parameter
+
+# Set to run after other actions
 
 ####################################################################################################
 #
@@ -30,17 +57,17 @@
 
 scriptVersion="1.0"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/
-organisationName="acme"
+organisationName="${4:-"acme"}"
 # Define the script logs path, either here on in a Jamf Script Function in attribute #4
-scriptLog="${4:-"/var/tmp/com.${organisationName}.dockutil.log"}"
+scriptLog="${5:-"/var/tmp/com.${organisationName}.dockutil.log"}"
 dockutilCommandFile=$( mktemp /var/tmp/dialogCommandFile.XXX )
 currentUser=$(echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }')
 dayOfTheWeek=$( date +'%A' )
 
 
-# Define the application path, either here on in a Jamf Script Function in attribute #5
+# Define the application path, either here on in a Jamf Script Function in Parameter #5
 
-appPath="$5"
+appPath="$6"
 
 ####################################################################################################
 #
