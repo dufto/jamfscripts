@@ -2,8 +2,10 @@
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 
-# version 1.1
+# version 1.2
 # Written by: Tommy Dufault
+#
+# 06-07-24 : Fixed a bunch of random typos and added instructions.
 #
 # Permission is granted to use this code in any way you want.
 # Credit would be nice, but not obligatory.
@@ -65,15 +67,16 @@
 
 scriptVersion="1.0"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/
+# Define the organization name here, either here on in a Jamf Script Function in attribute 45
 organisationName="${4:-"acme"}"
-# Define the script logs path, either here on in a Jamf Script Function in attribute #4
+# Define the script logs path, either here on in a Jamf Script Function in attribute #5
 scriptLog="${5:-"/var/tmp/com.${organisationName}.dockutil.log"}"
 dockutilCommandFile=$( mktemp /var/tmp/dialogCommandFile.XXX )
 currentUser=$(echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }')
 dayOfTheWeek=$( date +'%A' )
 
 
-# Define the application path, either here on in a Jamf Script Function in Parameter #5
+# Define the application path, either here on in a Jamf Script Function in Parameter #6
 
 appPath="$6"
 
