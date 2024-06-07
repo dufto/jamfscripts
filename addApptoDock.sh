@@ -40,6 +40,7 @@
 
 # Parameter 6: Application Path
 
+# Recommended: Prefix the script name with "Z_" if multiple scripts are set to execute "after" within the same policy, ensuring this script runs last in sequence.
 
 
 # Step 2
