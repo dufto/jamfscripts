@@ -13,6 +13,8 @@
 #
 # For Self-Service Usage
 #
+# Creating a Dock Item in Jamf is annoying
+#
 # This script add a defined application to the end of a dock, using dockutil and Jamf Pro
 # source dockutil https://github.com/kcrawford/dockutil/
 # 
