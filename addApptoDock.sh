@@ -10,6 +10,9 @@
 # Provided "as is", without warranty of any kind, express or implied.
 #
 # DESCRIPTION
+#
+# For Self-Service Usage
+#
 # This script add a defined application to the end of a dock, using dockutil and Jamf Pro
 # source dockutil https://github.com/kcrawford/dockutil/
 # 
@@ -48,6 +51,8 @@
 # Fill Parameter
 
 # Set to run after other actions
+
+# ENABLE SELF-SERVICE
 
 ####################################################################################################
 #
